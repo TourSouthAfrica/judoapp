@@ -398,6 +398,7 @@ app.listen(PORT, "0.0.0.0", () => {
 
 
 
+
 app.get("/classes", (req, res) => {
   if (!req.session.user) return res.redirect("/login");
   if (req.session.user.role === "coach") return res.redirect("/coach/classes");
@@ -1375,6 +1376,7 @@ app.get("/scan-checkin", async (req, res) => {
     payload
   });
 });
+
 
 
 

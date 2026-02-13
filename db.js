@@ -1,7 +1,10 @@
 
 const Database = require("better-sqlite3");
 const path = require("path");
-const db = new Database(path.join(__dirname, "data.sqlite"));
+const DB_PATH = process.env.DB_PATH || path.join(__dirname, "data.sqlite");
+const db = new Database(DB_PATH);
+console.log("USING DB PATH:", DB_PATH);
+
 
 console.log("USING DB PATH:", path.join(__dirname, "data.sqlite"));
 
@@ -132,3 +135,4 @@ if (existing.c === 0) {
 
 
 module.exports = db;
+
